@@ -322,6 +322,13 @@ void loop(){
       ledOn(game.stateVar1);
     }
     if( game.buttonWasPressed ){
+      if( game.buttonState[1][1] && game.buttonState[1][3] && game.buttonState[1][10] ){
+        if( player.isPlaying() ){
+          player.stopTrack();
+        }
+        player.playMP3("roketpop.mp3");
+        break;
+      }
       game.nextState = INTRO;
     }
     break;
